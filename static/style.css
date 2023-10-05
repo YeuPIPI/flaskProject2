@@ -1,0 +1,42 @@
+/* Tùy chỉnh màu nền */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Tùy chỉnh màu nền cho nút Tải lên */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+/* Hiệu ứng khi di chuột vào nút Tải lên */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Tùy chỉnh định dạng văn bản tiêu đề */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Định dạng văn bản cho thông báo phát hiện vết nứt */
+h2 {
+    color: #007bff;
+}
+/* Tùy chỉnh kích thước ảnh kết quả */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+/* Định dạng form tải lên */
+form {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}

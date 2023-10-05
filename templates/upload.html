@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tải lên ảnh và phát hiện vết nứt</title>
+    <!-- Kết nối tệp CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Tải lên ảnh và phát hiện vết nứt</title>
+    <!-- Tích hợp Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Tải lên ảnh và phát hiện vết nứt</h1>
+        <form method="POST" enctype="multipart/form-data" class="mt-3">
+            <div class="form-group">
+                <input type="file" name="file" class="form-control-file">
+            </div>
+            <button type="submit" class="btn btn-primary">Tải lên và phát hiện</button>
+        </form>
+
+        {% if is_crack_detected is not none %}
+            <div class="mt-5">
+                {% if is_crack_detected %}
+                    <h2 class="text-danger">Không phát hiện vết nứt</h2>
+                {% else %}
+                    <h2 class="text-success">Phát hiện vết nứt</h2>
+                {% endif %}
+                <img src="{{ result_image }}" alt="Kết quả" class="img-fluid mt-3">
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Tích hợp Bootstrap JS và jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

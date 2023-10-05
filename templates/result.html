@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tải lên ảnh</title>
+</head>
+<body>
+    <h1>Tải lên ảnh</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Tải lên">
+    </form>
+    {% if crack_detected is not none %}
+        {% if crack_detected %}
+            <p>Phát hiện vết nứt.</p>
+        {% else %}
+            <p>Không phát hiện vết nứt.</p>
+        {% endif %}
+    {% endif %}
+    
+    {% if result_image is not none %}
+        <h2>Kết quả:</h2>
+        <img src="data:image/png;base64,{{ result_image }}" alt="Kết quả" width="400">
+    {% endif %}
+    
+    <a href="/">Tải lên ảnh khác</a>
+</body>
+</html>
